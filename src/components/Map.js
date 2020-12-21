@@ -1,14 +1,11 @@
-import React from 'react';
-import { MapContainer, TileLayer } from 'react-leaflet';
-import LocationMarker from './LocationMarker';
-import MapCountryChange from './MapCountryChange';
-import DrawCircleOnMap from './DrawCircleOnMap';
-import './Map.css';
+import React from "react";
+import { MapContainer, TileLayer } from "react-leaflet";
+import LocationMarker from "./LocationMarker";
+import MapCountryChange from "./MapCountryChange";
+import DrawCircleOnMap from "./DrawCircleOnMap";
+import "./Map.css";
 
-
-function Map({countries, casesType, location, zoom}) {
-    // console.log("i map is rendering again", location, zoom);
-
+function Map({ countries, casesType, location, zoom }) {
     return (
         <div className="map">
             <MapContainer center={location} zoom={zoom} scrollWheelZoom={true}>
@@ -17,26 +14,20 @@ function Map({countries, casesType, location, zoom}) {
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
                 <LocationMarker />
-                <MapCountryChange location={location} zoom={zoom}/>
-                {
-                    countries.map((country) =>{
-                        return (
-                            <DrawCircleOnMap key={country.name} 
+                <MapCountryChange location={location} zoom={zoom} />
+                {countries.map((country) => {
+                    return (
+                        <DrawCircleOnMap
+                            key={country.name}
                             country={country}
                             casesType={casesType}
-                            />
-                        )
-                    })
-                }
-                {/* <CircleMarker center={[51.505, -0.109]} radius={100}>
-                    <Popup>
-                    A pretty CSS3 popup. <br /> Easily customizable.
-                    </Popup>
-                </CircleMarker> */}
+                        />
+                    );
+                })}
+                {/* <Circle center={[50.5, 30.5]} radius={1000000} pathOptions={{ color: colour }} /> */}
             </MapContainer>
-            
         </div>
-    )
+    );
 }
 
-export default Map
+export default Map;
