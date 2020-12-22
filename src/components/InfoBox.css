@@ -1,5 +1,49 @@
 .infoBox {
     flex: 1;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.infoBox:not(:last-child) {
+    margin-right: 10px;
+}
+
+.infoBox__cases {
+    color: #cc1034;
+    font-weight: 600;
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.infoBox__total {
+    color: #6c757d;
+    font-weight: 700 !important;
+    font-size: 0.8rem !important;
+    margin-top: 15px !important;
+}
+
+/* .infoBox:hover {
+    border-top: 10px solid red;
+} */
+
+/* .infoBox__recovered:hover {
+    border-top: 10px solid green;
+} */
+
+.infoBox__deaths:hover {
+    border-top: 10px solid #c02739;
+}
+
+/* *********************ashish********************** */
+/* .infoBox {
+    display: flex;
+    flex: 1;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.infoBox:not(:last-child) {
+    margin-right: 10px;
 }
 
 .InfoBox__selected {
@@ -14,7 +58,7 @@
 }
 .InfoBox__NewCases__Green {
     color: green;
-}
+} */
 
 /* ********************************************************************  */
 /* .infoBox {

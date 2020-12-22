@@ -5,15 +5,19 @@ body {
     background-color: whitesmoke;
 }
 
-.app {
+.app__upper {
     display: flex;
-    padding: 30px;
-    padding-right: 0px;
+    padding: 20px;
     justify-content: space-evenly;
 }
 
 .app__left {
     flex: 0.9;
+}
+
+.app__right {
+    display: flex;
+    flex-direction: column;
 }
 .app__right h3 {
     padding-bottom: 10px;
@@ -21,6 +25,8 @@ body {
 
 .app__header {
     display: flex;
+    align-items: center;
+    margin-bottom: 20px;
     justify-content: space-between;
 }
 .app__HeaderText {
@@ -30,33 +36,54 @@ body {
 .app__stats {
     display: flex;
     justify-content: space-between;
-    margin: 50px;
+    /* flex-wrap: wrap;  */
 }
 
-.app__info {
-    margin-right: 5px !important;
-}
-.app__infobox {
-    /* padding-right: 50px !important; */
+/* ************************************app__lower*************************************** */
+
+.app__lower {
 }
 
+/* ******************************app__graph************************** */
+.app__graph {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.app__graph__item {
+    text-align: center;
+    margin: 1vw;
+    box-shadow: 0 0 8px -4px black;
+    border-radius: 8%;
+    padding: 25px;
+}
+
+/* *********************************Responsive************************************* */
 @media (max-width: 920px) {
-    .app {
+    .app__upper {
         flex-direction: column;
     }
 }
 
 @media (max-width: 480px) {
-    .app__header {
+    /* .app__header {
         flex-direction: column;
-    }
-    .app__stats {
+    } */
+    /* .app__stats {
         flex-direction: column;
-    }
+    } */
     .app__info {
         margin: 20px !important;
     }
     .app__header h1 {
         padding-bottom: 20px;
+    }
+    /* .app__graph {
+        padding: 0px;
+        margin: 0px;
+    } */
+    .app__graph__item {
+        padding: 1vw;
     }
 }

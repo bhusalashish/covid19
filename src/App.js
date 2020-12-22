@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import {
-    ButtonBase,
     Card,
     CardContent,
     FormControl,
@@ -12,6 +11,7 @@ import InfoBox from "./components/InfoBox";
 import Map from "./components/Map";
 import CountriesTable from "./components/CountriesTable";
 import Graph from "./components/Graph";
+import LineGraph from "./components/LineGraph";
 
 //https://disease.sh/v3/covid-19/countries
 
@@ -77,42 +77,54 @@ function App() {
         }
     };
 
+    const countriesForGraph = [
+        "UK",
+        "Turkey",
+        "Italy",
+        "Spain",
+        "Argentina",
+        "USA",
+        "India",
+        "Brazil",
+        "Russia",
+        "France",
+    ];
+
+    const handleTypeChange = (type) => {
+        setType(type);
+    };
+
     return (
         <div className="app">
-            <div className="app__left">
-                <div className="app__header">
-                    <h1 className="app__HeaderText">
-                        Novel Covid-19 Statistics
-                    </h1>
-                    <FormControl>
-                        <Select
-                            variant="outlined"
-                            value={country}
-                            onChange={changeHandle}
-                        >
-                            <MenuItem key={"world"} value="world">
-                                World
-                            </MenuItem>
-                            {countries.map((country) => {
-                                return (
-                                    <MenuItem
-                                        key={country.id}
-                                        value={country.value}
-                                    >
-                                        {" "}
-                                        {country.name}{" "}
-                                    </MenuItem>
-                                );
-                            })}
-                        </Select>
-                    </FormControl>
-                </div>
-                <div className="app__stats">
-                    <ButtonBase
-                        onClick={() => setType("cases")}
-                        className="app__info"
-                    >
+            <div className="app__upper">
+                <div className="app__left">
+                    <div className="app__header">
+                        <h1 className="app__HeaderText">Daily Change</h1>
+                        <FormControl>
+                            <Select
+                                variant="outlined"
+                                value={country}
+                                onChange={changeHandle}
+                            >
+                                <MenuItem key={"world"} value="world">
+                                    World
+                                </MenuItem>
+                                {countries.map((country) => {
+                                    return (
+                                        <MenuItem
+                                            key={country.id}
+                                            value={country.value}
+                                        >
+                                            {country.name}
+                                        </MenuItem>
+                                    );
+                                })}
+                            </Select>
+                        </FormControl>
+                    </div>
+                    <div className="app__stats">
                         <InfoBox
+                            onClick={() => handleTypeChange("cases")}
                             className="app__infobox"
                             title="Total Cases"
                             newcases={countryInfo.todayCases}
@@ -120,32 +132,24 @@ function App() {
                             active={type === "cases"}
                             isRed
                         />
-                    </ButtonBase>
-                    <ButtonBase
-                        onClick={() => setType("recovered")}
-                        className="app__info"
-                    >
                         <InfoBox
+                            onClick={() => handleTypeChange("recovered")}
+                            className="app__infobox"
                             title="Recovered"
                             newcases={countryInfo.todayRecovered}
                             total={countryInfo.recovered}
                             active={type === "recovered"}
                         />
-                    </ButtonBase>
-                    <ButtonBase
-                        onClick={() => setType("deaths")}
-                        className="app__info"
-                    >
                         <InfoBox
+                            onClick={() => handleTypeChange("deaths")}
+                            className="app__infobox"
                             title="Deaths"
                             newcases={countryInfo.todayDeaths}
                             total={countryInfo.deaths}
                             isRed
                             active={type === "deaths"}
                         />
-                    </ButtonBase>
-                    <ButtonBase className="app__info">
-                        <InfoBox
+                        {/* <InfoBox
                             title="Active"
                             newcases={countryInfo.todayCases}
                             total={
@@ -153,27 +157,36 @@ function App() {
                                 (countryInfo.deaths + countryInfo.recovered)
                             }
                             isRed
-                        />
-                    </ButtonBase>
+                        /> */}
+                    </div>
+
+                    <Map
+                        countries={tabledata}
+                        casesType={type}
+                        location={location}
+                        zoom={zoom}
+                    />
                 </div>
 
-                <Map
-                    countries={tabledata}
-                    casesType={type}
-                    location={location}
-                    zoom={zoom}
-                />
+                <div className="app__right">
+                    <Card>
+                        <CardContent>
+                            <h3>Total Cases by countries</h3>
+                            <CountriesTable countries={tabledata} />
+                            <h3>Daily New cases</h3>
+                            <Graph country={country} type={type} />
+                        </CardContent>
+                    </Card>
+                </div>
             </div>
-
-            <div className="app__right">
-                <Card>
-                    <CardContent>
-                        <h3>Total Cases by countries</h3>
-                        <CountriesTable countries={tabledata} />
-                        <h3>Daily New cases</h3>
-                        <Graph country={country} type={type} />
-                    </CardContent>
-                </Card>
+            <div className="app__lower">
+                <div className="app__graph">
+                    {countriesForGraph.map((country) => (
+                        <div className="app__graph__item">
+                            <LineGraph key={country} countryName={country} />
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     );

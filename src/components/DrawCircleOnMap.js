@@ -21,14 +21,10 @@ function DrawCircleOnMap({ country, casesType = "recovered" }) {
     if (!area) {
         area = 800;
     }
-    // let radius = parseInt(
-    //     (country.population / area) *
-    //         Math.sqrt(area / 90000) *
-    //         Math.sqrt(country[casesType])
-    // );
     let radius = parseInt(
         (country[casesType] / country.population) * 20 * area
     );
+
     if (!radius) radius = 0;
     if (radius > 1523903) {
         radius = 1000000;
@@ -36,7 +32,6 @@ function DrawCircleOnMap({ country, casesType = "recovered" }) {
     if (radius > 1000000 && casesType !== "death") {
         radius = 700000;
     }
-    console.log(country.country, area, radius);
     return (
         <Circle
             center={[country.countryInfo.lat, country.countryInfo.long]}

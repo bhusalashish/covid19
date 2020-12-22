@@ -24,7 +24,6 @@ function Map({ countries, casesType, location, zoom }) {
                         />
                     );
                 })}
-                {/* <Circle center={[50.5, 30.5]} radius={1000000} pathOptions={{ color: colour }} /> */}
             </MapContainer>
         </div>
     );
