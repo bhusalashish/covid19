@@ -7,9 +7,9 @@ function InfoBox(props) {
     return (
         <Card
             onClick={props.onClick}
-            className={`infoBox ${active && "infoBox__selected"} ${
-                !isRed && "infoBox__recovered"
-            }`}
+            className={`infoBox ${active && "infoBox__selected"}  ${
+                active && !isRed && "infoBox__selected__recovered"
+            } ${!isRed && "infoBox__recovered"}`}
         >
             <CardContent>
                 <Typography

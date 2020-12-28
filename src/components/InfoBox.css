@@ -5,12 +5,12 @@
     border-radius: 20px !important;
 }
 
-/* .infoBox:hover {
+.infoBox:hover {
     background-color: rgba(250, 139, 161, 0.125);
-} */
-/* .infoBox__recovered:hover {
+}
+.infoBox__recovered:hover {
     background-color: rgba(140, 204, 123, 0.125) !important;
-} */
+}
 
 .infoBox:not(:last-child) {
     margin-right: 10px;
@@ -48,10 +48,12 @@
     color: #fde1e1 !important;
     background-color: rgba(250, 139, 161, 0.125) !important;
 }
+.infoBox__selected__recovered {
+    background-color: rgba(140, 204, 123, 0.125) !important;
+}
 .infoBox__recovered {
     border-color: green;
     color: #41a746 !important;
-    background-color: rgba(140, 204, 123, 0.125) !important;
 }
 /* .infoBox__recovered:hover {
     background-color: green !important;
