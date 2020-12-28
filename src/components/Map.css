@@ -1,6 +1,6 @@
 /* ***************Map******************  */
 .map {
-    height: 500px;
+    height: 530px;
     background-color: white;
     padding: 1rem;
     border-radius: 20px;
@@ -11,3 +11,10 @@
     height: 100%;
     border-radius: 12px;
 }
+
+/* @media (max-width: 480px) {
+    .map {
+        height: 350px;
+        width: 50vw;
+    }
+} */

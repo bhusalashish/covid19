@@ -4,44 +4,33 @@ import "./InfoBox.css";
 
 function InfoBox(props) {
     const { title, newcases, total, isRed, active } = props;
-
-    // return (
-    //     <Card>
-    //         <CardContent
-    //             className={`infoBox ${active && "InfoBox__selected"} ${
-    //                 !isRed && "InfoBox__selected__Green"
-    //             }`}
-    //         >
-    //             <Typography color="textSecondary">{title}</Typography>
-    //             <h2
-    //                 className={`InfoBox__NewCases ${
-    //                     !isRed && "InfoBox__NewCases__Green"
-    //                 } `}
-    //             >
-    //                 {" "}
-    //                 {`+ ${newcases}`}{" "}
-    //             </h2>
-    //             <Typography color="textSecondary">Total : {total}</Typography>
-    //         </CardContent>
-    //     </Card>
-    // );
     return (
         <Card
             onClick={props.onClick}
-            className={`infoBox && ${
-                title === "Recovered"
-                    ? "infoBox__recovered"
-                    : title === "Deaths"
-                    ? "infoBox__deaths"
-                    : ""
+            className={`infoBox ${active && "infoBox__selected"} ${
+                !isRed && "infoBox__recovered"
             }`}
         >
             <CardContent>
-                <Typography className="infoBox__title" color="textSecondary">
-                    {title}
+                <Typography
+                    className={`infoBox__title ${
+                        isRed ? "infoBox__title__red" : "infoBox__title__green"
+                    } `}
+                >
+                    <b>{title}</b>
                 </Typography>
-                <h1 className="infoBox__cases">+{newcases}</h1>
-                <Typography className="infoBox__total" color="textSecondary">
+                <h1
+                    className={`infoBox__cases ${
+                        !isRed && "infoBox__recovered__new"
+                    }`}
+                >
+                    +{newcases}
+                </h1>
+                <Typography
+                    className={`infoBox__total ${
+                        isRed ? "infoBox__total__red" : "infoBox__total__green"
+                    } `}
+                >
                     Total : {total}
                 </Typography>
             </CardContent>

@@ -1,96 +1,61 @@
 .infoBox {
     flex: 1;
-    border-radius: 20px;
     cursor: pointer;
-}
-
-.infoBox:not(:last-child) {
-    margin-right: 10px;
-}
-
-.infoBox__cases {
-    color: #cc1034;
-    font-weight: 600;
-    font-size: 1.75rem;
-    margin-bottom: 0.5rem;
-}
-
-.infoBox__total {
-    color: #6c757d;
-    font-weight: 700 !important;
-    font-size: 0.8rem !important;
-    margin-top: 15px !important;
+    text-align: center;
+    border-radius: 20px !important;
 }
 
 /* .infoBox:hover {
-    border-top: 10px solid red;
+    background-color: rgba(250, 139, 161, 0.125);
 } */
-
 /* .infoBox__recovered:hover {
-    border-top: 10px solid green;
+    background-color: rgba(140, 204, 123, 0.125) !important;
 } */
-
-.infoBox__deaths:hover {
-    border-top: 10px solid #c02739;
-}
-
-/* *********************ashish********************** */
-/* .infoBox {
-    display: flex;
-    flex: 1;
-    border-radius: 20px;
-    cursor: pointer;
-}
 
 .infoBox:not(:last-child) {
     margin-right: 10px;
 }
 
-.InfoBox__selected {
-    border-top: solid 10px red;
+.infoBox__title {
+    font-size: 2rem !important;
 }
-.InfoBox__selected__Green {
-    border-color: green;
+.infoBox__title__red {
+    color: #f6424c !important;
 }
-
-.InfoBox__NewCases {
-    color: red;
-}
-.InfoBox__NewCases__Green {
-    color: green;
-} */
-
-/* ********************************************************************  */
-/* .infoBox {
-    flex: 1;
-}
-
-.infoBox:not(:last-child) {
-    margin-right: 10px;
-}
-
-.infoBox--selected {
-    border-top: 10px solid greenyellow;
-}
-
-.infoBox--red {
-    border-color: red;
-}
-
-.infoBox__cases--green {
-    color: lightgreen !important;
+.infoBox__title__green {
+    color: #41a746 !important;
 }
 
 .infoBox__cases {
-    color: #cc1034;
-    font-weight: 600;
-    font-size: 1.75rem;
-    margin-bottom: 0.5rem;
+    color: #f6424c;
 }
 
 .infoBox__total {
     color: #6c757d;
     font-weight: 700 !important;
-    font-size: 0.8rem !important;
-    margin-top: 15px !important;
+    margin-top: 5px !important;
+}
+.infoBox__total__red {
+    color: #f6424c;
+}
+
+.infoBox__total__green {
+    color: #41a746;
+}
+
+.infoBox__selected {
+    border-top: 10px solid #f6424c;
+    color: #fde1e1 !important;
+    background-color: rgba(250, 139, 161, 0.125) !important;
+}
+.infoBox__recovered {
+    border-color: green;
+    color: #41a746 !important;
+    background-color: rgba(140, 204, 123, 0.125) !important;
+}
+/* .infoBox__recovered:hover {
+    background-color: green !important;
 } */
+.infoBox__recovered__new {
+    color: #41a746;
+}

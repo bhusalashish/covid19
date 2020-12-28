@@ -149,15 +149,6 @@ function App() {
                             isRed
                             active={type === "deaths"}
                         />
-                        {/* <InfoBox
-                            title="Active"
-                            newcases={countryInfo.todayCases}
-                            total={
-                                countryInfo.cases -
-                                (countryInfo.deaths + countryInfo.recovered)
-                            }
-                            isRed
-                        /> */}
                     </div>
 
                     <Map
@@ -169,14 +160,14 @@ function App() {
                 </div>
 
                 <div className="app__right">
-                    <Card>
-                        <CardContent>
-                            <h3>Total Cases by countries</h3>
-                            <CountriesTable countries={tabledata} />
-                            <h3>Daily New cases</h3>
-                            <Graph country={country} type={type} />
-                        </CardContent>
-                    </Card>
+                    {/* <Card>
+                        <CardContent> */}
+                    {/* <h3>Total Cases by countries</h3> */}
+                    <CountriesTable countries={tabledata} />
+                    {/* <h3>Daily New cases</h3> */}
+                    <Graph country={country} type={type} />
+                    {/* </CardContent>
+                    </Card> */}
                 </div>
             </div>
             <div className="app__lower">

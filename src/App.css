@@ -73,16 +73,18 @@ body {
     /* .app__stats {
         flex-direction: column;
     } */
+
+    /* **********************App Right*********************** */
+    .app__right {
+        flex-direction: column-reverse;
+    }
     .app__info {
         margin: 20px !important;
     }
     .app__header h1 {
         padding-bottom: 20px;
     }
-    /* .app__graph {
-        padding: 0px;
-        margin: 0px;
-    } */
+
     .app__graph__item {
         padding: 1vw;
     }
