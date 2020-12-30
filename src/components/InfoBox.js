@@ -1,6 +1,7 @@
 import { Card, CardContent, Typography } from "@material-ui/core";
 import React from "react";
 import "./InfoBox.css";
+import numeral from "numeral";
 
 function InfoBox(props) {
     const { title, newcases, total, isRed, active } = props;
@@ -24,14 +25,19 @@ function InfoBox(props) {
                         !isRed && "infoBox__recovered__new"
                     }`}
                 >
-                    +{newcases}
+                    {newcases < 1000
+                        ? numeral(newcases).format("+0a")
+                        : numeral(newcases).format("+0a.0")}
                 </h1>
                 <Typography
                     className={`infoBox__total ${
                         isRed ? "infoBox__total__red" : "infoBox__total__green"
                     } `}
                 >
-                    Total : {total}
+                    Total :{" "}
+                    {total < 1000
+                        ? numeral(total).format("0a")
+                        : numeral(total).format("0a.00")}
                 </Typography>
             </CardContent>
         </Card>
