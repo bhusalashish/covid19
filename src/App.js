@@ -153,26 +153,24 @@ function App() {
                 </div>
 
                 <div className="app__right">
-                    {/* <Card>
-                        <CardContent> */}
-                    <div>
-                        <h3>Total Cases by countries</h3>
-
-                        <Button
-                            variant="outlined"
-                            color="secondary"
-                            href="#full__table"
-                            // disabled
-                        >
-                            Click to see more
-                        </Button>
-                        {/* <button>Click to see more</button> */}
+                    <div className="app__sidetable">
+                        <div className="table__title">
+                            <h2>Table Report</h2>
+                            <Button
+                                variant="outlined"
+                                color="secondary"
+                                href="#full__table"
+                                // disabled
+                            >
+                                See more
+                            </Button>
+                        </div>
+                        <CountriesTable countries={tabledata} />
                     </div>
-                    <CountriesTable countries={tabledata} />
-                    <h3>Daily New cases</h3>
-                    <Graph country={country} type={type} />
-                    {/* </CardContent>
-                    </Card> */}
+                    <div className="app__sidegraph">
+                        <h3>Daily New {type}</h3>
+                        <Graph country={country} type={type} />
+                    </div>
                 </div>
             </div>
             <div className="app__lower">

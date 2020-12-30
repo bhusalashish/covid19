@@ -3,6 +3,8 @@
 }
 body {
     background-color: whitesmoke;
+    /* font-family: "Mali", cursive !important; */
+    font-family: "Thasadith", sans-serif;
 }
 
 .app__upper {
@@ -37,6 +39,18 @@ body {
     display: flex;
     justify-content: space-between;
     /* flex-wrap: wrap;  */
+}
+
+.table__title {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5px;
+}
+
+.app__sidegraph {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
 }
 
 /* ************************************app__lower*************************************** */
