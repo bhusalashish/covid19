@@ -12,9 +12,9 @@
     border-radius: 12px;
 }
 
-/* @media (max-width: 480px) {
+@media only screen and (max-width: 600px) {
     .map {
-        height: 350px;
-        width: 50vw;
+        height: 320px;
+        padding: 2.5vw;
     }
-} */
+}

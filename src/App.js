@@ -120,7 +120,7 @@ function App() {
                         <InfoBox
                             onClick={() => handleTypeChange("cases")}
                             className="app__infobox"
-                            title="Total Cases"
+                            title="Confirmed"
                             newcases={countryInfo.todayCases}
                             total={countryInfo.cases}
                             active={type === "cases"}
