@@ -1,0 +1,9 @@
+.leaflet-popup-content {
+    background-color: rgb(245, 245, 220);
+    border-radius: 11px;
+    padding: 13px 19px;
+    margin: 0;
+}
+.popup__case__type {
+    font-size: 1rem;
+}
