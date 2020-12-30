@@ -93,8 +93,15 @@ function App() {
         <div className="app">
             <div className="app__upper">
                 <div className="app__left">
+                    <div className="app__heading">
+                        <span className="app__heading__redtext">COVID-19</span>{" "}
+                        CORONAVIRUS PANDEMIC
+                    </div>
                     <div className="app__header">
-                        <h1 className="app__HeaderText">Daily Change</h1>
+                        <h1 className="app__HeaderText">
+                            <span className="app__header__text">Daily</span>{" "}
+                            Statistics
+                        </h1>
                         <FormControl>
                             <Select
                                 variant="outlined"

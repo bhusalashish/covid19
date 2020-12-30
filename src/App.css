@@ -3,13 +3,42 @@
 }
 body {
     background-color: whitesmoke;
-    /* font-family: "Mali", cursive !important; */
     font-family: "Thasadith", sans-serif;
+}
+
+.app__heading {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 550;
+    margin-bottom: 20px;
+}
+
+.app__heading__redtext {
+    font-weight: 900;
+    color: red;
+    border-radius: 20px;
+    padding: 5px;
+    background: rgba(255, 7, 58, 0.125);
+    transition: all 1.5s;
+}
+
+.app__HeaderText {
+    display: flex;
+}
+
+.app__header__text {
+    font-weight: 900;
+    color: #505050;
+    border-radius: 20px;
+    padding: 5px;
+    /* background: rgba(255, 7, 58, 0.125); */
+    background-color: rgb(204, 206, 207);
+    transition: all 1.5s;
 }
 
 .app__upper {
     display: flex;
-    padding: 20px;
+    padding: 10px;
     justify-content: space-evenly;
 }
 
@@ -27,18 +56,14 @@ body {
 
 .app__header {
     display: flex;
-    align-items: center;
     margin-bottom: 20px;
     justify-content: space-between;
-}
-.app__HeaderText {
-    color: red;
 }
 
 .app__stats {
     display: flex;
     justify-content: space-between;
-    /* flex-wrap: wrap;  */
+    flex-wrap: wrap;
 }
 
 .table__title {
@@ -87,7 +112,10 @@ body {
     /* .app__stats {
         flex-direction: column;
     } */
-
+    .app__HeaderText {
+        flex-direction: column;
+        padding-right: 10px;
+    }
     /* **********************App Right*********************** */
     .app__right {
         flex-direction: column-reverse;
