@@ -6,6 +6,7 @@ import Map from "./components/Map";
 import CountriesTable from "./components/CountriesTable";
 import Graph from "./components/Graph";
 import LineGraph from "./components/LineGraph";
+import { Button } from "@material-ui/core";
 
 //https://disease.sh/v3/covid-19/countries
 
@@ -124,7 +125,6 @@ function App() {
                             newcases={countryInfo.todayCases}
                             total={countryInfo.cases}
                             active={type === "cases"}
-                            isRed
                         />
                         <InfoBox
                             onClick={() => handleTypeChange("recovered")}
@@ -140,7 +140,6 @@ function App() {
                             title="Deaths"
                             newcases={countryInfo.todayDeaths}
                             total={countryInfo.deaths}
-                            isRed
                             active={type === "deaths"}
                         />
                     </div>
@@ -156,9 +155,21 @@ function App() {
                 <div className="app__right">
                     {/* <Card>
                         <CardContent> */}
-                    {/* <h3>Total Cases by countries</h3> */}
+                    <div>
+                        <h3>Total Cases by countries</h3>
+
+                        <Button
+                            variant="outlined"
+                            color="secondary"
+                            href="#full__table"
+                            // disabled
+                        >
+                            Click to see more
+                        </Button>
+                        {/* <button>Click to see more</button> */}
+                    </div>
                     <CountriesTable countries={tabledata} />
-                    {/* <h3>Daily New cases</h3> */}
+                    <h3>Daily New cases</h3>
                     <Graph country={country} type={type} />
                     {/* </CardContent>
                     </Card> */}

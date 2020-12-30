@@ -5,11 +5,48 @@
     border-radius: 12px !important;
 }
 
-.infoBox:hover {
-    background-color: rgba(250, 139, 161, 0.125);
+.infoBox__confirmed {
+    color: #f6424c !important;
+}
+
+.infoBox__recovered {
+    color: #43ca4a !important;
+}
+
+.infoBox__deaths {
+    color: #505050 !important;
+}
+
+.infoBox__confirmed:hover {
+    background-color: rgba(245, 179, 192, 0.26);
 }
 .infoBox__recovered:hover {
+    background-color: rgba(120, 201, 97, 0.125);
+}
+.infoBox__deaths:hover {
+    background-color: rgb(204, 206, 207);
+}
+
+.infoBox__selected__confirmed {
+    border-top: 8px solid red;
+    background-color: rgba(245, 179, 192, 0.26) !important;
+}
+.infoBox__selected__recovered {
+    border-top: 8px solid green;
     background-color: rgba(140, 204, 123, 0.125) !important;
+}
+.infoBox__selected__deaths {
+    border-top: 8px solid #505050;
+    background-color: rgb(204, 206, 207) !important;
+}
+.infoBox__selected__confirmed:hover {
+    background-color: rgba(245, 179, 192, 0.582) !important;
+}
+.infoBox__selected__recovered:hover {
+    background-color: rgba(141, 204, 123, 0.431) !important;
+}
+.infoBox__selected__deaths:hover {
+    background-color: rgb(185, 188, 189) !important;
 }
 
 .infoBox:not(:last-child) {
@@ -19,15 +56,8 @@
 .infoBox__title {
     font-size: 2rem !important;
 }
-.infoBox__title__red {
-    color: #f6424c !important;
-}
-.infoBox__title__green {
-    color: #41a746 !important;
-}
 
-.infoBox__cases {
-    color: #f6424c;
+.infoBox__new {
     font-weight: 600;
     font-size: 1.2rem;
     margin-top: 10px;
@@ -38,30 +68,8 @@
     font-weight: bold !important;
     font-size: 1.3rem !important;
 }
-.infoBox__total__red {
-    color: #f6424c;
-}
 
-.infoBox__total__green {
-    color: #41a746;
-}
-
-.infoBox__selected {
-    border-top: 8px solid #f6424c;
-    color: #fde1e1 !important;
-    background-color: rgba(250, 139, 161, 0.125) !important;
-}
-.infoBox__selected__recovered {
-    background-color: rgba(140, 204, 123, 0.125) !important;
-}
-.infoBox__recovered {
-    border-color: green;
-    color: #41a746 !important;
-}
-.infoBox__recovered__new {
-    color: #41a746;
-}
-
+/* *************************************Mobile******************************************** */
 @media only screen and (max-width: 600px) {
     .infoBox {
         border-radius: 8px !important;
